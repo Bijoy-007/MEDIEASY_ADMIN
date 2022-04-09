@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { Layout, Menu } from "antd";
 import {
-  DesktopOutlined,
+  LogoutOutlined,
   PieChartOutlined,
   SettingOutlined,
 } from "@ant-design/icons";
+import { NavLink } from "react-router-dom";
 
 const { Sider } = Layout;
-const { SubMenu } = Menu;
 
 const SideBar = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -21,12 +21,12 @@ const SideBar = () => {
       <div className="logo" />
       <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
         <Menu.Item key="1" icon={<PieChartOutlined />}>
-          Dashboard
+          <NavLink to="/app/dashboard">Dashboard</NavLink>
         </Menu.Item>
-        <Menu.Item key="2" icon={<DesktopOutlined />}>
-          Settings
+        <Menu.Item key="2" icon={<SettingOutlined />}>
+          <NavLink to="/app/settings">Settings</NavLink>
         </Menu.Item>
-        <Menu.Item key="3" icon={<SettingOutlined />}>
+        <Menu.Item key="3" icon={<LogoutOutlined />}>
           Logout
         </Menu.Item>
       </Menu>
