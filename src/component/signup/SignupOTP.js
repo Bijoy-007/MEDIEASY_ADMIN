@@ -1,9 +1,42 @@
 import { useState } from "react";
-import { Button } from "antd";
+import { Button, notification } from "antd";
 import OtpInput from "react-otp-input";
+import verifyOtp from "../../api/verifyOtp";
 
-const SignupOTP = () => {
+const SignupOTP = (props) => {
   const [otp, setOtp] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const verifyOtpHandler = async () => {
+    setIsLoading(true);
+    if (otp.length !== 6) {
+      notification.error({ message: "Please enter a valid OTP" });
+    } else {
+      try {
+        const id = localStorage.getItem("id");
+        console.log(id);
+        const { ok, message } = await verifyOtp({
+          id,
+          otp,
+        });
+        if (ok) {
+          notification.success({
+            message: "Your account has been verified",
+          });
+          props.onSuccess();
+        } else {
+          notification.error({
+            message: message,
+          });
+          props.onError();
+        }
+      } catch (err) {
+        notification.error({ message: err.message });
+        props.onError();
+      }
+    }
+    setIsLoading(false);
+  };
 
   return (
     <div
@@ -32,7 +65,13 @@ const SignupOTP = () => {
           separator={<span>-</span>}
         />
       </div>
-      <Button type="primary" size="large" shape="round">
+      <Button
+        loading={isLoading}
+        onClick={verifyOtpHandler}
+        type="primary"
+        size="large"
+        shape="round"
+      >
         Validate OTP
       </Button>
     </div>

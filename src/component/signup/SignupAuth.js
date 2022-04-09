@@ -5,7 +5,7 @@ import RoundInput from "../ui/RoundInput";
 import signup from "../../api/signup";
 const { Item } = Form;
 
-const SignupAuth = () => {
+const SignupAuth = (props) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const signupHandler = async (credentials) => {
@@ -15,21 +15,22 @@ const SignupAuth = () => {
 
       const { ok, data, message } = await signup(credentials);
       if (ok) {
-        const id = { data };
-        localStorage.setItem("id", JSON.stringify(id));
+        const {id} = data;
+        localStorage.setItem("id", id);
         notification.success({
           message: "Please verify your email to continue",
         });
+        props.onSuccess();
       } else {
         notification.error({
           message: message,
         });
+        props.onError();
       }
-      console.log(data);
-
       setIsLoading(false);
     } catch (err) {
       notification.error({ message: err.message });
+      props.onError();
       setIsLoading(false);
     }
   };
@@ -43,21 +44,45 @@ const SignupAuth = () => {
         direction="vertical"
         size={20}
       >
-        <Item name="hospitalEmail">
+        <Item
+          rules={[
+            {
+              required: true,
+              message: "Please enter your email",
+            },
+          ]}
+          name="hospitalEmail"
+        >
           <RoundInput
             placeholder="Enter your email"
             size="large"
             type="email"
           />
         </Item>
-        <Item name="hospitalPassword">
+        <Item
+          rules={[
+            {
+              required: true,
+              message: "Please enter your password",
+            },
+          ]}
+          name="hospitalPassword"
+        >
           <RoundInput
             placeholder="Enter your password"
             size="large"
             type="password"
           />
         </Item>
-        <Item name="hospitalConfirmPassword">
+        <Item
+          rules={[
+            {
+              required: true,
+              message: "Please enter confirm password",
+            },
+          ]}
+          name="hospitalConfirmPassword"
+        >
           <RoundInput
             placeholder="Confirm your password"
             size="large"
