@@ -77,6 +77,7 @@ const DetailsForm = ({ isEditing, onReadonly }) => {
       }
     };
     fetchDetails();
+    // eslint-disable-next-line
   }, []);
 
   const addHandler = (values) => {
@@ -92,7 +93,7 @@ const DetailsForm = ({ isEditing, onReadonly }) => {
   const updateDetailsHandler = async () => {
     setIsLoading(true);
     try {
-      const { ok, message } = updateHospitalDetails(details);
+      const { ok, message } = await updateHospitalDetails(details);
       if (ok) {
         onReadonly();
         notification.success({ message: "Successfully updated details" });

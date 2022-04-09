@@ -7,7 +7,6 @@ import {
 } from "@ant-design/icons";
 
 const { Sider } = Layout;
-const { SubMenu } = Menu;
 
 const SideBar = () => {
   const [collapsed, setCollapsed] = useState(false);

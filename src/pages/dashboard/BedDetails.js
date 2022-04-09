@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button, Table } from "antd";
 import AddBedModal from "../../component/dashboard/AddBedModal";
-import { OmitProps } from "antd/lib/transfer/ListBody";
 
 const BedDetails = ({ onAdd, isEditing }) => {
   const [bed, setBed] = useState([]);
@@ -9,6 +8,7 @@ const BedDetails = ({ onAdd, isEditing }) => {
 
   useEffect(() => {
     onAdd(bed);
+    // eslint-disable-next-line
   }, [bed]);
 
   const openModal = () => {

@@ -1,8 +1,8 @@
-import postWithOutToken from "../helper/postWithoutToken";
+import postWithToken from "../helper/postWithToken";
 
 const updateHospitalDetails = async (details) => {
   try {
-    const res = await postWithOutToken(
+    const res = await postWithToken(
       "/details/update_hospital_details",
       details
     );
