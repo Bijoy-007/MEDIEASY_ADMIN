@@ -1,6 +1,7 @@
 import { Card, Steps } from "antd";
 
 import SignupAuth from "./SignupAuth";
+import SignupComplete from "./SignupComplete";
 import SignupDetails from "./SignupDetails";
 import SignupOTP from "./SignupOTP";
 
@@ -14,7 +15,7 @@ const SignupCard = () => {
           marginBottom: "1rem",
         }}
         size="small"
-        current={0}
+        current={1}
       >
         <Step title="Credentials" />
         <Step title="Email verification" />
@@ -23,7 +24,8 @@ const SignupCard = () => {
       </Steps>
       {/* <SignupAuth /> */}
       {/* <SignupOTP /> */}
-      <SignupDetails />
+      {/* <SignupDetails /> */}
+      <SignupComplete />
     </Card>
   );
 };
