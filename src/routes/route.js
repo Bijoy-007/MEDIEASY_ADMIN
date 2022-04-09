@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Dashboard from "../pages/Dashboard";
+import Dashboard from "../pages/dashboard/Dashboard";
 import Landing from "../pages/Landing";
 
 const AllRoutes = () => {
