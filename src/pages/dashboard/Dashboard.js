@@ -1,10 +1,12 @@
+import { useState } from "react";
 import { Button, Row, Col } from "antd";
-import Layout from "../../layout/Layout";
 
+import Layout from "../../layout/Layout";
 import classes from "./Dashboard.module.css";
 import DetailsForm from "./DetailsForm";
 
 const Home = () => {
+  const [isEditing, setIsEditing] = useState(false);
   return (
     <Layout>
       <div className={classes.wrapper}>
@@ -14,12 +16,34 @@ const Home = () => {
           </Col>
           <Col span={12}>
             <div className={classes["btn-div"]}>
-              <Button type="primary" size="medium" shape="round">
-                Edit
-              </Button>
+              {!isEditing ? (
+                <Button
+                  onClick={() => {
+                    setIsEditing(true);
+                  }}
+                  type="primary"
+                  size="medium"
+                  shape="round"
+                >
+                  Edit
+                </Button>
+              ) : (
+                <Button
+                  onClick={() => {
+                    setIsEditing(false);
+                  }}
+                  type="ghost"
+                  size="medium"
+                  shape="round"
+                >
+                  Cancel
+                </Button>
+              )}
             </div>
           </Col>
-          <DetailsForm />
+          <DetailsForm onReadonly={() => {
+            setIsEditing(false);
+          }} isEditing={isEditing} />
         </Row>
       </div>
     </Layout>

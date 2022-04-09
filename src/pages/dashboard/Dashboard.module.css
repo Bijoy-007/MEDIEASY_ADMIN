@@ -27,6 +27,11 @@
 
 .form-wrapper {
   padding: 1rem;
+  width: 100%;
+}
+
+.col-wrapper {
+  padding : 0.5rem;
 }
 
 .input {
