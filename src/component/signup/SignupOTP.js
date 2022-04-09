@@ -14,9 +14,9 @@ const SignupOTP = () => {
       <div
         style={{
           margin: "auto",
-          marginLeft: "34%",
           marginBottom: "1rem",
           width: "50%",
+          textAlign: "center",
         }}
       >
         <OtpInput
@@ -28,7 +28,7 @@ const SignupOTP = () => {
             borderRadius: "10px",
           }}
           onChange={(otp) => setOtp(otp)}
-          numInputs={4}
+          numInputs={6}
           separator={<span>-</span>}
         />
       </div>

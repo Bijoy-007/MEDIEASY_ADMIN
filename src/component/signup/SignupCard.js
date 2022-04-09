@@ -1,6 +1,7 @@
 import { Card, Steps } from "antd";
 
 import SignupAuth from "./SignupAuth";
+import SignupDetails from "./SignupDetails";
 import SignupOTP from "./SignupOTP";
 
 const { Step } = Steps;
@@ -21,7 +22,8 @@ const SignupCard = () => {
         <Step title="Finish" />
       </Steps>
       {/* <SignupAuth /> */}
-      <SignupOTP />
+      {/* <SignupOTP /> */}
+      <SignupDetails />
     </Card>
   );
 };
