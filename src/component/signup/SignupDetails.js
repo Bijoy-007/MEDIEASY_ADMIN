@@ -1,4 +1,4 @@
-import { AutoComplete, Button, Form, Menu, notification } from "antd";
+import { AutoComplete, Button, Form, notification } from "antd";
 import { useState } from "react";
 
 import searchPlaceByName from "../../api/searchPlaceByName";
