@@ -1,0 +1,39 @@
+.wrapper {
+  width: 95%;
+  height: 95%;
+  background-color: #fff;
+  margin: 1rem auto;
+  border-radius: 1rem;
+}
+
+.btn-div {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin: auto;
+  padding: 1rem;
+}
+
+.label-wrapper {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: auto;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding-left: 1rem;
+  color: #7c7c7c;
+}
+
+.form-wrapper {
+  padding: 1rem;
+  width: 100%;
+}
+
+.col-wrapper {
+  padding : 0.5rem;
+}
+
+.input {
+  border-radius: 10px;
+}
