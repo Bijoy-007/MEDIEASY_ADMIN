@@ -9,13 +9,12 @@ const SignupAuth = (props) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const signupHandler = async (credentials) => {
-    console.log(credentials);
     try {
       setIsLoading(true);
 
       const { ok, data, message } = await signup(credentials);
       if (ok) {
-        const {id} = data;
+        const { id } = data;
         localStorage.setItem("id", id);
         notification.success({
           message: "Please verify your email to continue",

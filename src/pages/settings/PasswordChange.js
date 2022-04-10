@@ -13,10 +13,8 @@ const PasswordChange = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const passwordChangeHandler = async (credentials) => {
-    console.log(credentials);
     try {
       setIsLoading(true);
-
       const { ok, message } = await passwordChange(credentials);
       if (ok) {
         notification.success({

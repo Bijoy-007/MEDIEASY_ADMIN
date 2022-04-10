@@ -3,10 +3,7 @@ import postWithToken from "../helper/postWithToken";
 const passwordChange = async (body) => {
   try {
     const res = await postWithToken("/auth/password_change", body);
-    console.log(
-      "🚀 ~ file: passwordChange.js ~ line 6 ~ passwordChange ~ res",
-      res
-    );
+
     if (res.data?.status) {
       return {
         ok: res.data?.status,

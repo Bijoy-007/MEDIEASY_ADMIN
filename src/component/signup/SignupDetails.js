@@ -33,7 +33,6 @@ const SignupDetails = (props) => {
     }
   };
   const selectHandler = (value, option) => {
-    console.log(value, option);
     setPlaceId(option.placeId);
   };
 
@@ -60,7 +59,6 @@ const SignupDetails = (props) => {
         props.onError();
       }
     } catch (err) {
-      console.log(err);
       notification.error({ message: err.message });
       props.onError();
     }
