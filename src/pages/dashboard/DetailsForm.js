@@ -81,12 +81,10 @@ const DetailsForm = ({ isEditing, onReadonly }) => {
   }, []);
 
   const addHandler = (values) => {
-    console.log(values);
     setDetails((currentDetails) => ({ ...currentDetails, beds: values }));
   };
 
   const valuesChangeHandler = (values) => {
-    console.log(values);
     setDetails((currentDetails) => ({ ...currentDetails, ...values }));
   };
 

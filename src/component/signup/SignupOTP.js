@@ -14,7 +14,6 @@ const SignupOTP = (props) => {
     } else {
       try {
         const id = localStorage.getItem("id");
-        console.log(id);
         const { ok, message } = await verifyOtp({
           id,
           otp,

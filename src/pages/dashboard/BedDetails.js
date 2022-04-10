@@ -20,7 +20,6 @@ const BedDetails = ({ onAdd, isEditing }) => {
 
   const handleOk = (values) => {
     closeModal();
-    console.log(values);
     setBed([...bed, { ...values, index: bed.length }]);
   };
 
