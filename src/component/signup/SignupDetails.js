@@ -24,7 +24,7 @@ const SignupDetails = (props) => {
           ? data.map((place) => ({
               label: place.display_name,
               value: place.display_name,
-              placeId: place.place_id,
+              placeId: place.osm_id,
             }))
           : []
       );

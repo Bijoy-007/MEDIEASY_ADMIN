@@ -10,16 +10,32 @@ const { TabPane } = Tabs;
 
 const Landing = () => {
   return (
-    <Card style={{ width: "50%", margin: "auto", textAlign: "center" }}>
-      <Tabs centered defaultActiveKey="1">
-        <TabPane tab="Signup" key="1">
-          <SignupCard />
-        </TabPane>
-        <TabPane tab="Signin" key="2">
-          <LoginCard />
-        </TabPane>
-      </Tabs>
-    </Card>
+    <div
+      style={{
+        // backgroundImage: "linear-gradient(red, yellow)",
+        background: "linear-gradient(to right, #96DEDA, #50C9C3)",
+        height: "100vh",
+        margin: "0",
+      }}
+    >
+      <Card
+        style={{
+          width: "50%",
+          margin: "auto",
+          textAlign: "center",
+          top: "50px",
+        }}
+      >
+        <Tabs centered defaultActiveKey="1">
+          <TabPane tab="Signup" key="1">
+            <SignupCard />
+          </TabPane>
+          <TabPane tab="Signin" key="2">
+            <LoginCard />
+          </TabPane>
+        </Tabs>
+      </Card>
+    </div>
   );
 };
 
